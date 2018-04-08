@@ -3,13 +3,13 @@ var cardsInPlay = []
 var cardOne
 var cardTwo
 
-cardOne = cards[0]
-cardsInPlay.push(cardOne)
+function flipCard (cardId) {
+  cardsInPlay.push(cards[cards[cardId]])
+  checkForMatch()
+  console.log('User flipped ' + cards[cardId])
+}
 
-cardTwo = cards[2]
-cardsInPlay.push(cardTwo)
-
-if (cardsInPlay.length === 2) {
+function checkForMatch () {
   if (cardsInPlay[0] === cardsInPlay[1]) {
     alert('You found a match!')
   } else {
@@ -17,4 +17,4 @@ if (cardsInPlay.length === 2) {
   }
 }
 
-console.log(`User flipped ${cardsInPlay}`)
+flipCard(1)
